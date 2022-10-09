@@ -1,0 +1,17 @@
+openapi: 3.0.1
+info:
+  title: Personal Management API
+  version: 1.0.0
+servers:
+  - url: localhost:8080/
+paths:
+  /details:
+    get:
+      summary: GetDetails
+      description: Get the details
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getDetailsResp'
