@@ -15,3 +15,19 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/getDetailsResp'
+
+components:
+  schemas:
+    getDetailsResp:
+      type: object
+      description: Get Details Response object
+      properties:
+        activity_name:
+          type: string
+        start_time:
+          type: string
+        end_time:
+          type: string
+        priority:
+          type: integer
+          format: int32
