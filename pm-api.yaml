@@ -26,6 +26,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/getUsersResp'
+                
+  /users/{id}:
+    get:
+      summary: GetUserByID
+      description: Get user by ID
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getUserResp'
 
 components:
   schemas:
@@ -51,11 +62,15 @@ components:
           type: array
           description: Individual user data object
           items:
-            type: object:
-            properties:
-              name:
-                type: string
-              id:
-                type: string
-              group:
-                type: string
+            $ref: '#/components/schemas/getUserResp'
+                
+    getUserResp:
+      type: object
+      description: Individual user data object
+      properties:
+        name:
+          type: string
+        id:
+          type: string
+        group:
+          type: string
