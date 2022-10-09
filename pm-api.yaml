@@ -15,6 +15,17 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/getDetailsResp'
+                
+  /users:
+    get:
+      summary: GetUsers
+      description: Get users
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getUsersResp'
 
 components:
   schemas:
@@ -31,3 +42,20 @@ components:
         priority:
           type: integer
           format: int32
+          
+    getUsersResp:
+      type: object
+      description: Get Users response object
+      properties:
+        user_data:
+          type: array
+          description: Individual user data object
+          items:
+            type: object:
+            properties:
+              name:
+                type: string
+              id:
+                type: string
+              group:
+                type: string
